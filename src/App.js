@@ -1,25 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Sphere from './components/Sphere';
+import { Canvas } from '@react-three/fiber'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ambientLight intensity={0.5}/>
+      <directionalLight position={[-2,10,2]} intensity={1}/>
+      <Canvas className='canvas1'>
+        <Sphere/>
+      </Canvas>
     </div>
   );
 }
-
+    
 export default App;
